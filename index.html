@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng 8/3 vui vẻ nhé V </title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-pink: #ff69b4;
+            --royal-pink: #ff1493;
+            --soft-pink: #ffb6c1;
+            --light-pink: #fff0f5;
+            --gold: #ffd700;
+            --rose-gold: #b76e79;
+            --pearl: #f8f8ff;
+            --card-ink: #8a2d63;
+            --shadow: rgba(255, 105, 180, 0.3);
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe4f3 25%, #ffd4ee 50%, #ffc4e9 75%, #ffb4e4 100%);
+            position: relative;
+        }
+
+        /* ============ BOOT LOADER ============ */
+        #boot-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 15% 15%, #ffd9ef, #ffc1e3 45%, #ff9dd0 100%);
+            transition: opacity 0.7s ease, visibility 0.7s ease;
+        }
+
+        #boot-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .boot-panel {
+            width: min(92%, 460px);
+            border-radius: 28px;
+            padding: 34px 26px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 2px solid rgba(255, 215, 0, 0.55);
+            box-shadow: 0 15px 40px rgba(130, 20, 72, 0.25);
+            text-align: center;
+        }
+
+        .boot-title {
+            font-family: 'Noto Serif', serif;
+            color: #a61f66;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.04em;
+        }
+
+        .boot-subtitle {
+            color: #8d4472;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .boot-progress {
+            width: 100%;
+            height: 10px;
+            background: rgba(166, 31, 102, 0.18);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .boot-progress-bar {
+            width: 0;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #ff5ca9, #ffd27a, #ff4ea5);
+            transition: width 0.35s ease;
+        }
+
+        /* ============ ANIMATED BACKGROUND ============ */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 182, 193, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 50%);
+        }
+
+        /* ============ PARTICLES ============ */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* ============ LOGIN SCREEN ============ */
+        #login-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffecd2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s, visibility 1s;
+        }
+
+        #login-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 60px 50px;
+            border-radius: 30px;
+            box-shadow: 
+                0 20px 60px rgba(255, 105, 180, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.5) inset,
+                0 0 100px rgba(255, 182, 193, 0.3);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .crown-icon {
+            font-size: 80px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .login-container h1 {
+            font-family: 'Noto Serif', serif;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, var(--royal-pink), var(--gold), var(--primary-pink));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-container p {
+            font-family: 'Noto Serif', serif;
+            font-size: 1.25em;
+            color: var(--rose-gold);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .password-input-container {
+            position: relative;
+            margin-bottom: 30px;
+            z-index: 1;
+        }
+
+        #password-input {
+            width: 100%;
+            padding: 18px 25px;
+            border: 3px solid var(--primary-pink);
+            border-radius: 50px;
+            font-size: 1.1em;
+            text-align: center;
+            background: rgba(255, 240, 245, 0.8);
+            color: var(--royal-pink);
+            font-weight: 600;
+            letter-spacing: 3px;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        #password-input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            transform: scale(1.02);
+        }
+
+        #login-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--royal-pink), var(--primary-pink), var(--gold));
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        #login-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        #login-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        #login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.6);
+        }
+
+        .error-msg {
+            color: var(--royal-pink);
+            margin-top: 15px;
+            font-size: 0.95em;
+            opacity: 0;
+            transition: opacity 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-msg.show {
+            opacity: 1;
+        }
+
+        /* ============ MAIN CONTENT ============ */
+        #main-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        #main-content.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-ornament {
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.08;
+            color: var(--royal-pink);
+            animation: rotate 20s linear infinite;
+        }
+
+        .hero-ornament:nth-child(1) { top: 10%; left: 10%; }
+        .hero-ornament:nth-child(2) { bottom: 10%; right: 10%; animation-direction: reverse; }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-title {
+            font-family: 'Noto Serif', serif;
+            font-size: 5em;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff1493, #ff69b4, #ffd700, #ff69b4, #ff1493);
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            text-shadow: 0 0 50px rgba(255, 105, 180, 0.5);
+            animation: gradientShift 5s ease infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-family: 'Noto Serif', serif;
+            font-size: 2.8em;
+            color: var(--rose-gold);
+            margin-bottom: 40px;
+            text-shadow: 0 5px 20px rgba(183, 110, 121, 0.4);
+        }
+
+        .hero-date {
+            font-family: 'Noto Serif', serif;
+            font-size: 2em;
+            color: var(--royal-pink);
+            font-weight: 700;
+            margin-bottom: 50px;
+            letter-spacing: 5px;
+        }
+
+        /* ============ SCROLL DOWN INDICATOR (MỚI) ============ */
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            z-index: 5;
+        }
+
+        .scroll-down-text {
+            font-family: 'Noto Serif', serif;
+            font-size: 0.85rem;
+            color: var(--royal-pink);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            opacity: 0.8;
+        }
+
+        .scroll-down-arrow {
+            width: 28px;
+            height: 28px;
+            border-right: 3px solid var(--royal-pink);
+            border-bottom: 3px solid var(--royal-pink);
+            transform: rotate(45deg);
+            animation: scrollArrowBounce 2s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .scroll-down-arrow:nth-child(2) {
+            margin-top: -14px;
+            animation-delay: 0.15s;
+            opacity: 0.5;
+        }
+
+        .scroll-down-arrow:nth-child(3) {
+            margin-top: -14px;
+            animation-delay: 0.3s;
+            opacity: 0.3;
+        }
+
+        @keyframes scrollArrowBounce {
+            0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.7; }
+            50%      { transform: rotate(45deg) translateY(8px); opacity: 1; }
+        }
+
+        /* ============ CONTENT SECTION ============ */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============ ZODIAC CARD (MỚI HOÀN TOÀN) ============ */
+        .zodiac-card {
+            position: relative;
+            border-radius: 28px;
+            padding: 55px 50px;
+            margin-bottom: 60px;
+            text-align: center;
+            overflow: hidden;
+            background: 
+                linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 248, 253, 0.9));
+            border: double 4px transparent;
+            background-clip: padding-box;
+            box-shadow:
+                0 0 0 4px rgba(255, 20, 147, 0.12),
+                0 20px 60px rgba(255, 105, 180, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        }
+
+        /* Viền gradient tử vi xoay */
+        .zodiac-card::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 30px;
+            padding: 3px;
+            background: conic-gradient(
+                from 0deg,
+                #ff1493, #ffd700, #ff69b4, #c471ed, #ffd700, #ff1493
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: borderSpin 6s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes borderSpin {
+            to { filter: hue-rotate(360deg); }
+        }
+
+        /* Khung viền chấm bên trong */
+        .zodiac-card::after {
+            content: '';
+            position: absolute;
+            inset: 16px;
+            border-radius: 18px;
+            border: 1.5px dashed rgba(166, 31, 102, 0.3);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Hiệu ứng ánh sáng lướt */
+        .zodiac-card .card-shine {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.15), transparent);
+            transition: left 0.8s ease;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .zodiac-card:hover .card-shine {
+            left: 100%;
+        }
+
+        /* Các ngôi sao trang trí góc */
+        .zodiac-card .corner-star {
+            position: absolute;
+            font-size: 22px;
+            opacity: 0.35;
+            z-index: 2;
+            animation: twinkle 2.5s ease-in-out infinite alternate;
+        }
+
+        .zodiac-card .corner-star:nth-child(1) { top: 18px; left: 22px; animation-delay: 0s; }
+        .zodiac-card .corner-star:nth-child(2) { top: 18px; right: 22px; animation-delay: 0.6s; }
+        .zodiac-card .corner-star:nth-child(3) { bottom: 18px; left: 22px; animation-delay: 1.2s; }
+        .zodiac-card .corner-star:nth-child(4) { bottom: 18px; right: 22px; animation-delay: 1.8s; }
+
+        @keyframes twinkle {
+            0%   { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
+            100% { opacity: 0.6; transform: scale(1.1) rotate(20deg); }
+        }
+
+        .zodiac-card .card-icon {
+            font-size: 70px;
+            margin-bottom: 25px;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-12px) scale(1.08); }
+        }
+
+        .zodiac-card h2 {
+            font-family: 'Noto Serif', serif;
+            font-size: 2.4em;
+            font-weight: 700;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, #c2185b, #d81b60, #ad1457);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Đường kẻ trang trí */
+        .zodiac-card .divider {
+            width: 80px;
+            height: 2px;
+            margin: 0 auto 25px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--royal-pink), var(--gold), transparent);
+            position: relative;
+            z-index: 2;
+        }
+
+        .zodiac-card .divider::before {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: var(--gold);
+            background: white;
+            padding: 0 8px;
+        }
+
+        .zodiac-card p {
+            font-size: 1.15em;
+            line-height: 2;
+            color: #5b3e52;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* ============ GALLERY ============ */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+            transition: all 0.5s;
+            background: linear-gradient(135deg, var(--soft-pink), var(--light-pink));
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(255, 20, 147, 0.5);
+        }
+
+        .gallery-item i {
+            font-size: 80px;
+            color: var(--royal-pink);
+            opacity: 0.7;
+        }
+
+        /* ============ MESSAGE BUTTON ============ */
+        .message-section {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .message-btn {
+            display: inline-block;
+            padding: 25px 60px;
+            background: linear-gradient(135deg, var(--royal-pink), var(--gold));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.5);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid rgba(255, 215, 0, 0.5);
+        }
+
+        .message-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .message-btn:hover::before {
+            left: 100%;
+        }
+
+        .message-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(255, 20, 147, 0.7);
+        }
+
+        .message-btn i {
+            margin-right: 15px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* ============ HEARTS ANIMATION ============ */
+        .heart {
+            position: fixed;
+            font-size: 30px;
+            color: var(--primary-pink);
+            pointer-events: none;
+            animation: floatUp 4s ease-in forwards;
+            z-index: 999;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ============ SPARKLES ============ */
+        .sparkle {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleAnimation 1.5s ease-out forwards;
+            z-index: 999;
+        }
+
+        @keyframes sparkleAnimation {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5) rotate(180deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3em; }
+            .hero-subtitle { font-size: 2.1em; }
+            .hero-date { font-size: 1.5em; }
+            .zodiac-card { padding: 40px 28px; }
+            .zodiac-card h2 { font-size: 1.9em; }
+            .login-container { padding: 40px 30px; }
+            .login-container h1 { font-size: 2em; }
+        }
+
+        /* ============ LOADING ============ */
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(255, 105, 180, 0.2);
+            border-top: 8px solid var(--royal-pink);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Boot Loader -->
+    <div id="boot-loader" aria-live="polite">
+        <div class="boot-panel">
+            <div class="boot-title">Đang đánh thức lâu đài hiệu ứng...</div>
+            <div class="boot-subtitle">Trang sẽ vào chậm hơn một chút để sau đó mượt hơn.</div>
+            <div class="boot-progress">
+                <div class="boot-progress-bar" id="boot-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="animated-bg"></div>
+    <div id="particles-js"></div>
+
+    <!-- Login Screen -->
+    <div id="login-screen">
+        <div class="login-container">
+            <div class="crown-icon">👑</div>
+            <h1>Công chúa đăng nhập</h1>
+            <p>Nhập mật khẩu riêng để mở quà 8/3</p>
+            <div class="password-input-container">
+                <input type="password" id="password-input" placeholder="Nhập mật khẩu..." maxlength="20">
+            </div>
+            <button id="login-btn">
+                <span style="position: relative; z-index: 2;">Mở cửa yêu thương</span>
+            </button>
+            <div class="error-msg" id="error-msg">❌ Mật khẩu không đúng!</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-ornament">🌸</div>
+            <div class="hero-ornament">🦋</div>
+            <h1 class="hero-title" data-aos="fade-down" data-aos-duration="1500">
+                Chúc mừng ngày 8/3
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+                Gửi cô nàng học Hàng Hải mà tớ quen 
+            </p>
+            <div class="hero-date" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="600">
+                08 • 03 • 2026
+            </div>
+
+            <!-- Scroll Down Indicator (MỚI) -->
+            <div class="scroll-down" id="scroll-down-btn">
+                <span class="scroll-down-text">kéo xuống</span>
+                <div class="scroll-down-arrow"></div>
+                <div class="scroll-down-arrow"></div>
+                <div class="scroll-down-arrow"></div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <div class="content-section">
+
+            <!-- Card 1 -->
+            <div class="zodiac-card" data-aos="fade-up" data-aos-duration="1000" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                <span class="corner-star">✦</span>
+                <span class="corner-star">✦</span>
+                <span class="corner-star">✦</span>
+                <span class="corner-star">✦</span>
+                <div class="card-shine"></div>
+                <div class="card-icon">💖</div>
+                <h2>Dành Riêng Cho Em</h2>
+                <div class="divider"></div>
+                <p>
+                    Trong ngày đặc biệt này, tớ muốn gửi đến cậu những lời chúc tốt đẹp nhất. 
+                    Chúc cậu 8/3 vui vẻ, luôn xinh đẹp, nhiều năng lượng tích cực và gặp nhiều may mắn trong học tập cũng như cuộc sống.
+                    Đây chỉ là món quà nhỏ của tớ dành cho cậu dịp này, lần đầu tiên tớ ngựa ngựa vậy á. Mong cậu 0 chê.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="zodiac-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                <span class="corner-star">✦</span>
+                <span class="corner-star">✦</span>
+                <span class="corner-star">✦</span>
+                <span class="corner-star">✦</span>
+                <div class="card-shine"></div>
+                <div class="card-icon">🌹</div>
+                <h2>Bông Hoa Tặng Cho Cậu</h2>
+                <div class="divider"></div>
+                <p>
+                    Tớ 0 tặng được 1 bông hoa cho cậu bên ngoài vì xa quá nên là =)). 
+                    Tớ tặng kiểu này nhá. 
+                    Đừng có tủi thân vì 0 nhận được bông hoa nào đấy nhá.
+                    Vì cậu là 1 bông hoa đẹp nhất của bố mẹ cậu rùi.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="zodiac-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-tilt data-tilt-max="5" data-tilt-speed="400">
+                <span class="corner-star">✦</span>
+                <span class="corner-star">✦</span>
+                <span class="corner-star">✦</span>
+                <span class="corner-star">✦</span>
+                <div class="card-shine"></div>
+                <div class="card-icon">🐸</div>
+                <h2>Lời Hứa Của Anh</h2>
+                <div class="divider"></div>
+                <p>
+                    100% được làm bằng Hưng Krix
+                </p>
+            </div>
+
+            <!-- Gallery -->
+            <div class="gallery">
+                <div class="gallery-item" data-aos="flip-left" data-aos-duration="1000">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="gallery-item" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="100">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="gallery-item" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="gallery-item" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="300">
+                    <i class="fas fa-gem"></i>
+                </div>
+            </div>
+
+            <!-- Message Section -->
+            <div class="message-section" data-aos="zoom-in" data-aos-duration="1500">
+                <a href="https://www.tiktok.com/@hungww0108?_r=1&_t=ZS-94VH7gWQAF7" class="message-btn" id="message-btn">
+                    <!-- Thay đổi nhắn tin ngay ở đây thay id hoặc usname vd: https://m.me/(đổi cái này) -->
+                    <i class="fas fa-paper-plane"></i>
+                    Nhắn Tin Ngay
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+    <script>
+        // ============ PASSWORD LOGIN SYSTEM ============
+        const correctPassword = '1110'; // đổi mật khẩu ở đây trong ''
+        const passwordInput = document.getElementById('password-input');
+        const loginBtn = document.getElementById('login-btn');
+        const errorMsg = document.getElementById('error-msg');
+        const loginScreen = document.getElementById('login-screen');
+        const mainContent = document.getElementById('main-content');
+        const bootLoader = document.getElementById('boot-loader');
+        const bootProgressBar = document.getElementById('boot-progress-bar');
+
+        let effectsPreloaded = false;
+        let heartIntervalId = null;
+
+        // ============ PRELOAD EFFECTS ============
+        async function preloadEffects() {
+            const steps = 6;
+            let currentStep = 0;
+
+            const tick = () => {
+                currentStep += 1;
+                const progress = Math.min((currentStep / steps) * 100, 100);
+                bootProgressBar.style.width = progress + '%';
+            };
+
+            // 1) Fonts
+            if (document.fonts && document.fonts.ready) {
+                await document.fonts.ready;
+            }
+            tick();
+
+            // 2) Particle engine
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 78, density: { enable: true, value_area: 850 } },
+                    color: { value: ['#ff69b4', '#ffd700', '#ff1493', '#ffb6c1'] },
+                    shape: {
+                        type: ['circle', 'triangle', 'edge'],
+                        stroke: { width: 0 }
+                    },
+                    opacity: {
+                        value: 0.55,
+                        random: true,
+                        anim: { enable: true, speed: 1, opacity_min: 0.12, sync: false }
+                    },
+                    size: {
+                        value: 4.8,
+                        random: true,
+                        anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#ff69b4',
+                        opacity: 0.22,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1.8,
+                        direction: 'none',
+                        random: true,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'grab' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 135, line_linked: { opacity: 0.65 } },
+                        push: { particles_nb: 3 }
+                    }
+                },
+                retina_detect: true
+            });
+            tick();
+
+            // 3) Pre-init AOS
+            AOS.init({ duration: 1000, once: true, offset: 100 });
+            tick();
+
+            // 4) Pre-init Vanilla Tilt
+            VanillaTilt.init(document.querySelectorAll('.zodiac-card[data-tilt]'), {
+                max: 5,
+                speed: 400,
+                glare: true,
+                'max-glare': 0.15,
+                scale: 1.02
+            });
+            tick();
+
+            // 5) Warm-up confetti
+            confetti({
+                particleCount: 1,
+                spread: 20,
+                origin: { x: 0.5, y: 0.4 },
+                disableForReducedMotion: true,
+                colors: ['#ff69b4']
+            });
+            tick();
+
+            // 6) Let browser finish first paint
+            await new Promise((resolve) => {
+                requestAnimationFrame(() => requestAnimationFrame(resolve));
+            });
+            tick();
+
+            effectsPreloaded = true;
+            bootLoader.classList.add('hidden');
+            passwordInput.focus();
+        }
+
+        preloadEffects();
+
+        // ============ LOGIN ============
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                loginBtn.click();
+            }
+        });
+
+        loginBtn.addEventListener('click', function() {
+            if (!effectsPreloaded) {
+                errorMsg.textContent = 'Đang tải hiệu ứng, vui lòng đợi thêm 1 chút...';
+                errorMsg.classList.add('show');
+                return;
+            }
+
+            const enteredPassword = passwordInput.value;
+            
+            if (enteredPassword === correctPassword) {
+                // Confetti
+                const duration = 3000;
+                const end = Date.now() + duration;
+
+                (function frame() {
+                    confetti({
+                        particleCount: 3,
+                        angle: 60,
+                        spread: 55,
+                        origin: { x: 0 },
+                        colors: ['#ff69b4', '#ffd700', '#ff1493', '#ffb6c1']
+                    });
+                    confetti({
+                        particleCount: 3,
+                        angle: 120,
+                        spread: 55,
+                        origin: { x: 1 },
+                        colors: ['#ff69b4', '#ffd700', '#ff1493', '#ffb6c1']
+                    });
+
+                    if (Date.now() < end) {
+                        requestAnimationFrame(frame);
+                    }
+                }());
+
+                // Show main content
+                setTimeout(() => {
+                    loginScreen.classList.add('hidden');
+                    mainContent.classList.add('visible');
+                    AOS.refreshHard();
+                }, 500);
+
+                startHeartAnimation();
+            } else {
+                // Error shake
+                errorMsg.textContent = '❌ Mật khẩu không đúng!';
+                errorMsg.classList.add('show');
+                
+                anime({
+                    targets: '.login-container',
+                    translateX: [
+                        { value: -10, duration: 100 },
+                        { value: 10, duration: 100 },
+                        { value: -10, duration: 100 },
+                        { value: 10, duration: 100 },
+                        { value: 0, duration: 100 }
+                    ],
+                    easing: 'easeInOutSine'
+                });
+
+                setTimeout(() => {
+                    errorMsg.classList.remove('show');
+                }, 3000);
+
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        });
+
+        // ============ FLOATING HEARTS ============
+        function startHeartAnimation() {
+            if (heartIntervalId) return;
+
+            heartIntervalId = setInterval(() => {
+                createHeart();
+            }, 900);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = ['💖', '💗', '💕', '💓', '💝'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        // ============ SPARKLES ON MOUSE MOVE ============
+        document.addEventListener('mousemove', function(e) {
+            if (mainContent.classList.contains('visible')) {
+                if (Math.random() > 0.94) {
+                    createSparkle(e.clientX, e.clientY);
+                }
+            }
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1500);
+        }
+
+        // ============ GSAP SCROLL ANIMATIONS ============
+        window.addEventListener('load', function() {
+            if (mainContent.classList.contains('visible')) {
+                gsap.from('.hero-title', {
+                    duration: 1.5,
+                    y: -100,
+                    opacity: 0,
+                    ease: 'power4.out'
+                });
+
+                gsap.from('.hero-subtitle', {
+                    duration: 1.5,
+                    y: 100,
+                    opacity: 0,
+                    delay: 0.3,
+                    ease: 'power4.out'
+                });
+            }
+        });
+
+        // ============ SCROLL DOWN BUTTON ============
+        document.getElementById('scroll-down-btn').addEventListener('click', function() {
+            document.querySelector('.content-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
